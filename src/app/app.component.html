@@ -1,0 +1,19 @@
+<form [formGroup]="sampleForm" (ngSubmit)="onSubmit()" class="sampleForm">
+  <select
+    id="options"
+    [(ngModel)]="selectedOption"
+    (change)="handleSelectOptionChange($event)"
+    name="options"
+    formControlName="options"
+  >
+    <option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+  <input
+    id="inputText"
+    formControlName="inputText"
+    placeholder="Enter text"
+    type="text"
+  />
+</form>
